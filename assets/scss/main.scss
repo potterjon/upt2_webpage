@@ -1,0 +1,62 @@
+$colors: (
+    primary: #543,
+    dark: darker(#543, 40%),
+    light: lighter(#543, 40%)
+);
+
+@function color ($color_name){
+    @return  map-get($colors,$color_name);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: green;
+    height: 3.5em;
+    display: inline-flex;
+    justify-content: space-between;
+    
+    &> img{
+        margin: 1em;
+    display: inline-block;
+    }
+}
+
+ ul {
+    //  background-color: blue;
+     list-style: none;
+    //  text-align: right;
+     &>li{
+         display: inline-block;
+     }
+
+     &> li >a{
+         font-weight: bolder;
+        text-decoration: none;
+        padding: 10px;
+     }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    &#main{
+        margin-top: 3.5em;
+    }
+
+    &:nth-child(even){
+        background-color: gray;
+    }
+}
