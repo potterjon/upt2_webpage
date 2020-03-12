@@ -1,9 +1,34 @@
+section#main > .btn, .programs input, .btn {
+  color: white;
+  background-color: color(p-dark);
+  margin: auto;
+  border-radius: 100px;
+  border-style: none;
+  font-family: montserrat;
+  padding: .5rem 1rem;
+  opacity: .5;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+section#main > .btn:hover, .programs input:hover, .btn:hover {
+  opacity: 1;
+}
+
+section#main > .btn {
+  display: block;
+  background-color: blue;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: montserrat;
-  text-transform: uppercase;
   font-size: 13px;
+}
+
+.programs input {
+  background-color: #1a3f6f;
 }
 
 header {
@@ -12,7 +37,6 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: green;
   height: 3.5em;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -20,6 +44,7 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-transform: uppercase;
 }
 
 header > img {
@@ -39,6 +64,27 @@ ul > li > a {
   font-weight: bolder;
   text-decoration: none;
   padding: 10px;
+  color: #242424;
+}
+
+ul > li > a:hover {
+  color: #1a3f6f;
+}
+
+#rrss {
+  position: fixed;
+  bottom: 3rem;
+  right: 2.5rem;
+}
+
+#rrss > a {
+  text-decoration: none;
+}
+
+#rrss > a > i {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 section {
@@ -53,10 +99,264 @@ section {
 }
 
 section#main {
-  margin-top: 3.5em;
+  background-image: url("../img/background-1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+section#main > #title {
+  margin: auto;
+  font-size: 6em;
+  color: #fff;
+  margin-bottom: 0;
+  -webkit-animation: aparecer 1s ease;
+          animation: aparecer 1s ease;
+}
+
+@media screen and (max-width: 720px) {
+  section#main > #title {
+    width: 80vw;
+  }
+}
+
+section#main #brief {
+  color: #a0bfe8;
+  width: 70%;
+  margin: 10px auto;
+  -webkit-animation: aparecer 1s;
+          animation: aparecer 1s;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+section#main > .btn {
+  background-color: transparent;
+  border: #a0bfe8 solid 1px;
+  opacity: 1;
+  margin-top: 0;
+  text-decoration: none;
+  color: #a0bfe8;
+  font-weight: bold;
+}
+
+section#main > .btn:hover {
+  color: white;
+  background-color: #1a3f6f;
+  border-color: #1a3f6f;
 }
 
 section:nth-child(even) {
   background-color: gray;
+}
+
+#programas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+}
+
+@media screen and (max-width: 480px) {
+  #programas {
+    height: auto;
+  }
+}
+
+#programas h2:nth-child(1) {
+  display: block;
+  margin-top: 3.5rem;
+  font-size: 3rem;
+}
+
+#programas > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75vw;
+  margin: auto;
+}
+
+@media screen and (max-width: 480px) {
+  #programas > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.programs {
+  padding: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 250px;
+  margin: 2rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .programs {
+    margin-bottom: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.programs p {
+  text-transform: lowercase;
+}
+
+#sumate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 45vh;
+}
+
+@media screen and (max-width: 480px) {
+  #sumate {
+    height: auto;
+  }
+}
+
+#sumate h2 {
+  display: block;
+  margin-bottom: 0;
+  font-size: 3rem;
+}
+
+#sumate > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75vw;
+  margin: auto;
+}
+
+@media screen and (max-width: 480px) {
+  #sumate > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#sumate > div > article > p {
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
+  color: #a0bfe8;
+}
+
+#sumate > div > article {
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
+}
+
+@media screen and (max-width: 480px) {
+  #sumate > div > article {
+    margin: 1.5rem 0;
+  }
+}
+
+#sumate > div > article:hover {
+  color: #a0bfe8;
+}
+
+#sumate > div > article:hover p {
+  opacity: 1;
+}
+
+#sumate > div > article > i {
+  font-size: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contact {
+  height: auto;
+}
+
+.btn {
+  background-color: #1a3f6f;
+}
+
+.btn {
+  -webkit-animation-name: aparecer;
+          animation-name: aparecer;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+@-webkit-keyframes aparecer {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes aparecer {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=main.css.map */

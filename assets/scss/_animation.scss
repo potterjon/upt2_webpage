@@ -1,0 +1,17 @@
+.btn{
+    animation-name: aparecer;
+    animation-duration: 1s;
+    animation-delay: .4s;
+}
+
+@keyframes aparecer {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}

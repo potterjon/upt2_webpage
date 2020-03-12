@@ -1,41 +1,24 @@
-$colors: (
-    primary: #543,
-    dark: darker(#543, 40%),
-    light: lighter(#543, 40%)
-);
+@import 'config';
 
-@function color ($color_name){
-    @return  map-get($colors,$color_name);
-}
-
-body{
-    margin: 0;
-    padding: 0;
-    font-family: montserrat;
-    text-transform: uppercase;
-    font-size: 13px;
-}
 header{
     overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: green;
     height: 3.5em;
     display: inline-flex;
     justify-content: space-between;
-    
+    text-transform: uppercase;
+
     &> img{
         margin: 1em;
-    display: inline-block;
+        display: inline-block;
     }
 }
 
  ul {
-    //  background-color: blue;
      list-style: none;
-    //  text-align: right;
      &>li{
          display: inline-block;
      }
@@ -44,19 +27,206 @@ header{
          font-weight: bolder;
         text-decoration: none;
         padding: 10px;
+        color: rgb(36, 36, 36);
+
+        &:hover{
+            color: color(p-dark);
+        }
      }
 }
+#rrss{
+    position: fixed;
+    bottom: 3rem;
+    right: 2.5rem;
 
+    &>a{
+        text-decoration:none;
+
+    &>i{
+        display: block;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+}
+}
 section {
     display: flex;
     flex-direction: column;
     height: 100vh;
 
     &#main{
-        margin-top: 3.5em;
+        // margin-top: 3.5em;
+        background-image: url('../img/background-1.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        text-align: center; //title:ON
+         
+        // img or title
+        &> #title{
+            margin: auto;
+            // width: 60vw;
+            font-size: 6em;
+            color: #fff;
+            //opacity: .6; img:ON
+            margin-bottom: 0;
+            animation: aparecer 1s ease;
+
+            @media screen and (max-width: 720px){
+                width: 80vw;
+            }
+        }
+
+        #brief{
+            color: color(p-light);
+            width: 70%;
+            margin: 10px auto;
+            animation: aparecer 1s ;
+            animation-delay: .3s;
+        }
+
+        &> .btn {
+            @extend %a-btn;
+            background-color: transparent;
+            border: color(p-light) solid 1px;
+            opacity: 1;
+            margin-top: 0;
+            text-decoration: none;
+            color: color(p-light);
+            font-weight: bold;
+
+            &:hover {
+                color: white;
+                background-color: color(p-dark);
+                border-color: color(p-dark);
+            }
+        }
+
     }
 
     &:nth-child(even){
         background-color: gray;
     }
 }
+#programas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    @include query(select($sizes,mobile)){
+        height: auto;
+    }
+    h2:nth-child(1){
+        display: block;
+        margin-top: 3.5rem;
+        font-size: 3rem;
+    }
+    &>div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 75vw;
+        margin: auto;
+        @include flex-column;
+    }
+}
+.programs {
+    padding: 1.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: .2);
+    border-radius: 5px;
+    width: 250px;
+    // height: 300px;
+    margin: 2rem;
+    text-align: center;
+    @include query(select($sizes,mobile)){
+        margin-bottom: 2rem;
+        flex-direction: column;
+
+    }
+
+    p{
+        text-transform: lowercase;
+    }
+
+    // & input{
+    //     @extend %btn;
+    // // background-color: color(p-dark);
+
+    // }
+}
+
+#sumate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45vh;
+
+        @include query(select($sizes,mobile)){
+            height: auto;
+        }
+    h2{
+        display: block;
+        margin-bottom: 0;
+        font-size: 3rem;
+    }
+    &>div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 75vw;
+        margin: auto;
+
+        @include flex-column;
+
+        
+        &>article>p{
+            text-align: center;
+            opacity: 0;
+            transition: all ease-in-out .2s;
+            color: color(p-light);
+
+        }
+
+        &>article{
+        transition: all ease-in-out .2s;
+
+        @include query(select($sizes,mobile)){
+            margin: 1.5rem 0;
+        }
+
+        &:hover{
+            color: color(p-light);
+           
+            & p{
+
+            opacity: 1;
+            }
+        }
+        }
+
+        &>article>i{
+            font-size: 8rem;
+            display: flex;
+            justify-content: center;
+            // transition: all ease-in-out .2s;
+
+            &:hover{
+                // color: color(p-light);
+            }
+        }
+
+
+    }
+}
+
+#contact{
+    height: auto;
+}
+.btn {
+    @extend %btn;
+    background-color: color(p-dark);
+}
+
+@import 'animation';

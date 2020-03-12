@@ -1,0 +1,73 @@
+$colors: (
+    primary: #245698,
+    p-dark: darken(#245698, 10%),
+    p-light: lighten(#245698, 40%)
+);
+
+$sizes: (
+    mobile: 480px,
+    tablet: 768px,
+    desktop: 1024
+);
+
+%btn {
+    color: white;
+    background-color: #{color(p-dark)};
+    margin: auto;
+    border-radius: 100px;
+    border-style: none;
+    font-family: montserrat;
+    padding: .5rem 1rem;
+    opacity: .5;
+    transition: all .2s ease-in-out;
+
+    &:hover{
+        opacity: 1;
+    }
+
+}
+
+%a-btn{
+    @extend %btn;
+    display: block;
+    background-color: blue;
+
+
+}
+
+@mixin query ($size) {
+    @media screen and (max-width: $size) {
+        @content
+    }
+}
+
+@mixin flex-column {
+    @include query(select($sizes,mobile)){
+        flex-direction: column;
+        @content;
+    }
+}
+
+@function select ($what,$what2){
+    @return map-get($what, $what2);
+}
+
+@function color ($color_name){
+    @return  map-get($colors,$color_name);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    // text-transform: uppercase;
+    font-size: 13px;
+}
+
+.programs {
+    input{
+        @extend %btn;
+     background-color: #{color(p-dark)};
+
+    }
+}
