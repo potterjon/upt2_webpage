@@ -1,4 +1,4 @@
-section#main > .btn, .programs input, .btn {
+section#main #brief > .btn, .programs input, .btn {
   color: white;
   background-color: color(p-dark);
   margin: auto;
@@ -11,11 +11,11 @@ section#main > .btn, .programs input, .btn {
   transition: all .2s ease-in-out;
 }
 
-section#main > .btn:hover, .programs input:hover, .btn:hover {
+section#main #brief > .btn:hover, .programs input:hover, .btn:hover {
   opacity: 1;
 }
 
-section#main > .btn {
+section#main #brief > .btn {
   display: block;
   background-color: blue;
 }
@@ -103,15 +103,25 @@ section#main {
   background-size: cover;
   background-attachment: fixed;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 section#main > #title {
-  margin: auto;
-  font-size: 6em;
+  font-size: 9em;
   color: #fff;
-  margin-bottom: 0;
   -webkit-animation: aparecer 1s ease;
           animation: aparecer 1s ease;
+  text-align: right;
 }
 
 @media screen and (max-width: 720px) {
@@ -122,25 +132,28 @@ section#main > #title {
 
 section#main #brief {
   color: #a0bfe8;
-  width: 70%;
-  margin: 10px auto;
+  width: 30%;
   -webkit-animation: aparecer 1s;
           animation: aparecer 1s;
   -webkit-animation-delay: .3s;
           animation-delay: .3s;
+  text-align: left;
+  word-wrap: break-word;
 }
 
-section#main > .btn {
+section#main #brief > .btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: transparent;
   border: #a0bfe8 solid 1px;
   opacity: 1;
-  margin-top: 0;
   text-decoration: none;
   color: #a0bfe8;
   font-weight: bold;
 }
 
-section#main > .btn:hover {
+section#main #brief > .btn:hover {
   color: white;
   background-color: #1a3f6f;
   border-color: #1a3f6f;
